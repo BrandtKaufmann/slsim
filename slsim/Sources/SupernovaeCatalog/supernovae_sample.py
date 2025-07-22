@@ -212,7 +212,7 @@ class SupernovaeCatalog(object):
                 time.append(self.lightcurve_time)
                 for band in self.band_list:
                     mag = lightcurve_class.get_apparent_magnitude(
-                        self.lightcurve_time, "lsst" + band, zpsys=self.mag_zpsys
+                        self.lightcurve_time, "" + band, zpsys=self.mag_zpsys
                     )
                     getattr(self, f"magnitude_{band}").append(mag)
             lightcurve_data = {"MJD": time}
